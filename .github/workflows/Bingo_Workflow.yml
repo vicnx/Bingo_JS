@@ -43,9 +43,8 @@ jobs:
         run: |
           npm install
           npm run buildDev
-        working-directory: ./project
       - name: artifact
         uses: actions/upload-artifact@v2
         with:
           name: artifact
-          path: ./project/dist
+          path: ./dist
