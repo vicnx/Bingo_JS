@@ -9,6 +9,7 @@ const test_execution_job = core.getInput("test_execution_job");
 const build_statics_job = core.getInput("build_statics_job");
 const deploy_job = core.getInput("deploy_job");
 
+//Esta funcion comrpueba si el job esta vacio (ya que si es skipped no guarda ningun estado)_
 function check_skipped(job) {
   if (job == "") {
     job = "skipped";
@@ -23,7 +24,6 @@ var transporter = nodemailer.createTransport({
     pass: send_pass,
   },
 });
-
 var mailOptions = {
   from: send_email,
   to: author_email,
