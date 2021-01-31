@@ -97,6 +97,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Set new line readme
         run: |
+          sed -i '$d' README.md
           echo -e "\nUltima versión desplegada el día: `date`" >> README.md
       - name: Push changes to repository
         run: |
