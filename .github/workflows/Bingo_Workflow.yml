@@ -77,7 +77,7 @@ jobs:
           author_email: ${{ secrets.AUTHOR_EMAIL }}
           send_email: ${{ secrets.SEND_EMAIL }}
           send_pass: ${{ secrets.SEND_PASS }}
-          syntax_check_job: ${{jobs.syntax_check_job.status}}
-          test_execution_job: ${{jobs.test_execution_job.status}}
-          build_statics_job: ${{jobs.build_statics_job.status}}
-          deploy_job: ${{jobs.deploy_job.status}}
+          syntax_check_job: ${{needs.syntax_check_job.status}}
+          test_execution_job: ${{needs.test_execution_job.status}}
+          build_statics_job: ${{needs.build_statics_job.status}}
+          deploy_job: ${{needs.deploy_job.status}}
