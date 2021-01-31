@@ -56,10 +56,10 @@ var mailOptions = {
   siguientes resultados:\n\n syntax_check_job: ${check_skipped(
     syntax_check_job
   )}\n test_execution_job: ${check_skipped(
-    syntax_check_job
+    test_execution_job
   )}\n build_statics_job:${check_skipped(
-    syntax_check_job
-  )}\n deploy_job: ${check_skipped(syntax_check_job)}`,
+    build_statics_job
+  )}\n deploy_job: ${check_skipped(deploy_job)}`,
 };
 
 transporter.sendMail(mailOptions, function (error, info) {
