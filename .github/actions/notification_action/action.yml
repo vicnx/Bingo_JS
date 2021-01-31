@@ -11,6 +11,18 @@ inputs:
   send_pass:
     description: "Contraseña del sender"
     required: true
+  syntax_check_job:
+    description: "syntax_check_job"
+    required: true
+  test_execution_job:
+    description: "test_execution_job"
+    required: true
+  build_statics_job:
+    description: "build_statics_job"
+    required: true
+  deploy_job:
+    description: "deploy_job"
+    required: true
 
 outputs:
   message:
