@@ -71,6 +71,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Send Email
+        if: ${{ always() }}
         uses: ./.github/actions/notification_action
         with:
           author_email: ${{ secrets.AUTHOR_EMAIL }}
