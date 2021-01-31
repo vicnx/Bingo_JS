@@ -20,6 +20,8 @@ jobs:
           LINTER_RULES_PATH: /
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.js
           VALIDATE_JAVASCRIPT_ES: true
+    outputs:
+      job-status: ${{ job.status }}
   test_execution_job:
     name: test_execution_job
     runs-on: ubuntu-latest
@@ -31,6 +33,8 @@ jobs:
           npm install
           npm install jest
           npm test
+    outputs:
+      job-status: ${{ job.status }}
   build_statics_job:
     name: build_statics_job
     runs-on: ubuntu-latest
@@ -47,6 +51,8 @@ jobs:
         with:
           name: artifact
           path: ./dist
+    outputs:
+      job-status: ${{ job.status }}
   deploy_job:
     runs-on: ubuntu-latest
     needs: build_statics_job
@@ -62,6 +68,8 @@ jobs:
           project: .
           login: ${{ secrets.SURGE_EMAIL }}
           token: ${{ secrets.SURGE_TOKEN }}
+    outputs:
+      job-status: ${{ job.status }}
   notification_job:
     name: notification_job
     runs-on: ubuntu-latest
@@ -76,7 +84,7 @@ jobs:
           author_email: ${{ secrets.AUTHOR_EMAIL }}
           send_email: ${{ secrets.SEND_EMAIL }}
           send_pass: ${{ secrets.SEND_PASS }}
-          syntax_check_job: ${{needs.syntax_check_job.status}}
-          test_execution_job: ${{needs.test_execution_job.status}}
-          build_statics_job: ${{needs.build_statics_job.status}}
-          deploy_job: ${{needs.deploy_job.status}}
+          syntax_check_job: ${{needs.syntax_check_job.outputs.job-status}}
+          test_execution_job: ${{needs.test_execution_job.outputs.job-status}}
+          build_statics_job: ${{needs.build_statics_job.outputs.job-status}}
+          deploy_job: ${{needs.deploy_job.outputs.job-status}}
