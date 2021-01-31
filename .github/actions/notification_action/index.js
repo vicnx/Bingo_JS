@@ -9,6 +9,13 @@ const test_execution_job = core.getInput("test_execution_job");
 const build_statics_job = core.getInput("build_statics_job");
 const deploy_job = core.getInput("deploy_job");
 
+function check_skipped(job) {
+  if (job == "") {
+    job = "skipped";
+  }
+  return job;
+}
+
 var transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -23,7 +30,13 @@ var mailOptions = {
   subject: "Resultado del workflow ejecutado",
   text: `Se ha realizado un push en la rama githubActions_improvement que
   ha provocado la ejecución del workflow Bingo_Workflow con los
-  siguientes resultados:\n\n syntax_check_job: ${syntax_check_job}\n test_execution_job: ${test_execution_job}\n build_statics_job:${build_statics_job}\n deploy_job: ${deploy_job}`,
+  siguientes resultados:\n\n syntax_check_job: ${check_skipped(
+    syntax_check_job
+  )}\n test_execution_job: ${check_skipped(
+    syntax_check_job
+  )}\n build_statics_job:${check_skipped(
+    syntax_check_job
+  )}\n deploy_job: ${check_skipped(syntax_check_job)}`,
 };
 
 transporter.sendMail(mailOptions, function (error, info) {
