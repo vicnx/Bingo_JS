@@ -1,0 +1,21 @@
+name: "Send Notification"
+description: "Envia mensaje por gmail"
+
+inputs:
+  author_email:
+    description: "Email Author"
+    required: true
+  send_email:
+    description: "Email del sender"
+    required: true
+  send_pass:
+    description: "Contraseña del sender"
+    required: true
+
+outputs:
+  message:
+    description: "Response message"
+
+runs:
+  using: "node12"
+  main: "dist/index.js"

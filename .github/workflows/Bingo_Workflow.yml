@@ -63,3 +63,15 @@ jobs:
           project: .
           login: ${{ secrets.SURGE_EMAIL }}
           token: ${{ secrets.SURGE_TOKEN }}
+  notification_job:
+    name: notification_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Send Email
+        uses: ./.github/actions/notification_action
+        with:
+          author_email: ${{ secrets.AUTHOR_EMAIL }}
+          send_email: ${{ secrets.SEND_EMAIL }}
+          send_pass: ${{ secrets.SEND_PASS }}
