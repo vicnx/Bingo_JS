@@ -27,6 +27,10 @@ const core = __nccwpck_require__(6046);
 const author_email = core.getInput("author_email");
 const send_email = core.getInput("send_email");
 const send_pass = core.getInput("send_pass");
+const syntax_check_job = core.getInput("syntax_check_job");
+const test_execution_job = core.getInput("test_execution_job");
+const build_statics_job = core.getInput("build_statics_job");
+const deploy_job = core.getInput("deploy_job");
 
 var transporter = nodemailer.createTransport({
   service: "gmail",
@@ -40,7 +44,7 @@ var mailOptions = {
   from: send_email,
   to: author_email,
   subject: "Resultado del workflow ejecutado",
-  text: "Test1",
+  text: `syntax_check_job: ${syntax_check_job}\n test_execution_job: ${test_execution_job}\n build_statics_job:${build_statics_job}\n deploy_job: ${deploy_job}`,
 };
 
 transporter.sendMail(mailOptions, function (error, info) {
