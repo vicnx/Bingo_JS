@@ -413,26 +413,26 @@ Y como podemos ver ha modificado el readme.md correctamente.
 
 Aquí adjunto capturas de archivos completos y comprobaciones.
 
-Estrcutura
+Estrcutura:
 
 <img src="media/comprobaciones1.png" alt="Estructura final">
 
-Bingo_Workflow.yml
+Bingo_Workflow.yml:
 
 <img src="media/comprobaciones2.png" alt="Estructura final">
 
-notification_action/action.yml
+notification_action/action.yml:
 
 <img src="media/comprobaciones3.png" alt="Estructura final">
 
-Todos los jobs funcionando
+Todos los jobs funcionando:
 
 <img src="media/comprobaciones4.png" alt="Estructura final">
 
-Correo enviado todo correcto
+Correo enviado todo correcto:
 
 <img src="media/comprobaciones5.png" alt="Estructura final">
 
-Readme modificado
+Readme modificado:
 
 <img src="media/comprobaciones6.png" alt="Estructura final">
