@@ -6,7 +6,7 @@
 
 ## ÍNDICE
 
-- 1. Bingo
+- 1.Bingo
 
   - 1.1 Tecnologias utilizadas
     - 1.1.1 Javascript ES6
@@ -14,7 +14,7 @@
     - 1.1.3 Socket io
     - 1.1.4 Webpack
 
-- 2. Mejorar Proyecto con Github Actions
+- 2.Mejorar Proyecto con Github Actions
 
   - 2.1 Tecnologias utilizadas
 
@@ -33,7 +33,7 @@
     - 2.2.6 Job de envío de notificación a los usuarios del proyecto
     - 2.2.7 Job de actualización del README principal del proyecto
 
-- 3. Comprobaciones
+- 3.Comprobaciones
 
 ## 1. BINGO
 
