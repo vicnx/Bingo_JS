@@ -423,7 +423,7 @@ Bingo_Workflow.yml:
 
 notification_action/action.yml:
 
-<img src="media/comprobaciones3.png" alt="Estructura final">
+<img src="media/comprobaciones3_action.png" alt="Estructura final">
 
 Todos los jobs funcionando:
 
